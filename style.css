@@ -1,0 +1,287 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header.dark-mode {
+    background-color: #1a73e8;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.marketplace {
+    width: 60%;
+}
+
+.marketplace h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filter {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.filter:hover {
+    background-color: #005bb5;
+}
+
+.listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.listing {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.listing:hover {
+    transform: translateY(-5px);
+}
+
+.listing img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.listing h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.listing p {
+    margin: 10px 0;
+}
+
+.listing .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0073e6;
+}
+
+.add-listing {
+    width: 35%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.add-listing.dark-mode {
+    background-color: #333;
+}
+
+.add-listing h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.add-listing form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-listing input, .add-listing textarea, .add-listing select {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-listing button {
+    padding: 10px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.add-listing button:hover {
+    background-color: #005bb5;
+}
+
+/* Dark mode button */
+.dark-mode-toggle {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+}
+
+footer.dark-mode {
+    background-color: #1a73e8;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .marketplace {
+        width: 100%;
+    }
+
+    .add-listing {
+        width: 100%;
+    }
+
+    .listings {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .marketplace h2, .add-listing h2 {
+        font-size: 1.5rem;
+    }
+
+    .listing h3 {
+        font-size: 1.2rem;
+    }
+
+    .listing .price {
+        font-size: 1rem;
+    }
+}
+
+
+/* Add styles for the dark mode toggle button */
+.dark-mode-toggle {
+    background-color: transparent;
+    border: 2px solid #0073e6;
+    padding: 10px 20px;
+    color: #0073e6;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 160px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #0073e6;
+    color: white;
+    border-color: #005bb5;
+}
+
+.dark-mode-toggle .switch {
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    border-radius: 20px;
+    background-color: #ccc;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle .switch .circle {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  
+}

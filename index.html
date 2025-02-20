@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Student Marketplace</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Add Listing</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Marketplace -->
+    <main class="container">
+        <div class="marketplace">
+            <h2>Available Listings</h2>
+           <!--  --> <div class="filters">
+                <button class="filter" onclick="filterByCategory('all')">All</button>
+                <button class="filter" onclick="filterByCategory('textbooks')">Textbooks</button>
+                <button class="filter" onclick="filterByCategory('electronics')">Electronics</button>
+                <button class="filter" onclick="filterByCategory('supplies')">Dorm Supplies</button>
+                <!-- Dark Mode Toggle -->
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <span class="switch">
+        <span class="circle"></span>
+    </span> Switch Mode
+</button>
+            </div>
+            <div id="listings" class="listings">
+                <!-- Dynamic listings will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Add Listing Form -->
+        <div class="add-listing">
+            <h2>Add a New Listing</h2>
+            <form id="listingForm">
+                <input type="text" id="title" placeholder="Item Title" required>
+                <input type="number" id="price" placeholder="Price" required>
+                <select id="category" required>
+                    <option value="textbooks">Textbooks</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="supplies">Dorm Supplies</option>
+                </select>
+                <textarea id="description" placeholder="Item Description" required></textarea>
+                <input type="file" id="image" accept="image/*" required>
+                <button type="submit">Add Listing</button>
+            </form>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Student Marketplace</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
